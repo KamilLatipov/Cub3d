@@ -10,11 +10,11 @@ HEADERS   = include/
 
 MLX       = mlx
 
-MLXNAME   = libmlx.dylib
+MLXNAME   = $(MLX)/libmlx.a
 
 LIBFT     = libft/
 
-LIBFTNAME = libft.a
+LIBFTNAME = $(LIBFT)/libft.a
 
 OBJS     = $(SRC:.c=.o)
 
@@ -23,25 +23,25 @@ SRC      = cub3d.c
 all:    $(NAME)
 
 $(MLXNAME):
-        $(MAKE) -c $(MLX)
+		$(MAKE) -C $(MLX)
 
 $(LIBFTNAME):
-        $(MAKE) -c $(LIBFT)
+		$(MAKE) -C $(LIBFT)
 
 %.o: %.c
-        $(CC) $(FLAGS) -c $< -I $(HEADERS) -o $@
+		$(CC) $(FLAGS) -c $< -I $(HEADERS) -o $@
 
 $(NAME): $(MLXNAME) $(LIBFTNAME) $(OBJS)
-        $(CC) -o $@ $^ $(MLXFLAGS)
+		$(CC) -o $@ $^ $(MLXFLAGS)
 
-.clean:
-        rm -f $(OBJS)
-        $(MAKE) clean -c $(MLX)
-        $(MAKE) clean -c $(LIBFT)
+clean:
+		rm -f $(OBJS)
+		$(MAKE) clean -C $(MLX)
+		$(MAKE) clean -C $(LIBFT)
 
-.fclean: clean
-        rm -f $(NAME)
-        $(MAKE) fclean -c $(LIBFT)
+fclean: clean
+		rm -f $(NAME)
+		$(MAKE) fclean -C $(LIBFT)
 
 re: fclean all
 
