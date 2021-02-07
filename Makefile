@@ -18,7 +18,7 @@ LIBFTNAME = $(LIBFT)/libft.a
 
 OBJS     = $(SRC:.c=.o)
 
-SRC      = cub3d.c
+SRC      = cub3d.c gnl/get_next_line.c gnl/get_next_line_utils.c
 
 all:    $(NAME)
 

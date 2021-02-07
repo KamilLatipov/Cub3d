@@ -10,42 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a786998a-c645-40e0-9f20-5351efde46eb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/libft_a/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft_a/ft_atoi.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft_a/ft_bzero.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft_a/ft_calloc.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft_a/ft_isalnum.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft_a/ft_isalpha.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft_a/ft_isascii.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft_a/ft_isdigit.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft_a/ft_isprint.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft_a/ft_itoa.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft_a/ft_memccpy.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft_a/ft_memchr.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft_a/ft_memcmp.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft_a/ft_memcpy.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft_a/ft_memmove.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft_a/ft_memset.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft_a/ft_putchar_fd.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft_a/ft_putendl_fd.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft_a/ft_putnbr_fd.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft_a/ft_putstr_fd.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft_a/ft_split.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft_a/ft_strchr.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft_a/ft_strdup.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft_a/ft_strjoin.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft_a/ft_strlcat.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft_a/ft_strlcpy.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft_a/ft_strlen.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft_a/ft_strmapi.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft_a/ft_strncmp.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft_a/ft_strnstr.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft_a/ft_strrchr.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft_a/ft_strtrim.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft_a/ft_substr.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft_a/ft_tolower.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft_a/ft_toupper.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft_a/libft.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cub3d.c" beforeDir="false" afterPath="$PROJECT_DIR$/cub3d.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/cub3d.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/cub3d.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +51,8 @@
       <workItem from="1612546275337" duration="1354000" />
       <workItem from="1612615405339" duration="3749000" />
       <workItem from="1612632729852" duration="41000" />
+      <workItem from="1612633218452" duration="1856000" />
+      <workItem from="1612685331531" duration="2576000" />
     </task>
     <servers />
   </component>
