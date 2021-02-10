@@ -12,28 +12,29 @@
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+int		ft_atoi(char *str, int *i)
 {
-	size_t	count;
 	int		neg;
+	int		count;
 	int		retval;
 
 	count = 0;
 	neg = 1;
 	retval = 0;
 	while (str[count] == ' ' || (str[count] >= 8 && str[count] <= 13))
-		count++;
+		count += 1;
 	if (str[count] == '-' || str[count] == '+')
 	{
 		if (str[count] == '-')
 			neg *= -1;
-		count++;
+		count += 1;
 	}
 	while (str[count] >= '0' && str[count] <= '9')
 	{
 		retval *= 10;
 		retval += str[count] - 48;
-		count++;
+		count += 1;
 	}
+	*i += count;
 	return (retval * neg);
 }
