@@ -50,5 +50,10 @@ void			ft_putendl_fd(char *s, int fd);
 char			*ft_itoa(int n);
 char			**ft_split(char const *s, char c);
 void			ft_putnbr_fd(int n, int fd);
+void			ft_lstclear(t_list **lst, void (*del)(void*));
+t_list			*ft_lstnew(void *content);
+void			ft_lstdelone(t_list *lst, void (*del)(void*));
+void			ft_lstadd_front(t_list **alst, t_list *new);
+void			ft_lstadd_back(t_list **alst, t_list *new);
 
 #endif
