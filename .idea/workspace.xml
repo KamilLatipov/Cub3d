@@ -9,12 +9,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a786998a-c645-40e0-9f20-5351efde46eb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cub3d.c" beforeDir="false" afterPath="$PROJECT_DIR$/cub3d.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file_parser/get_color.c" beforeDir="false" afterPath="$PROJECT_DIR$/file_parser/get_color.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file_parser/get_resolution.c" beforeDir="false" afterPath="$PROJECT_DIR$/file_parser/get_resolution.c" afterDir="false" />
-    </list>
+    <list default="true" id="a786998a-c645-40e0-9f20-5351efde46eb" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,7 +56,7 @@
       <workItem from="1612633218452" duration="1856000" />
       <workItem from="1612685331531" duration="2576000" />
       <workItem from="1612953285566" duration="11160000" />
-      <workItem from="1613044689401" duration="4420000" />
+      <workItem from="1613044689401" duration="4773000" />
     </task>
     <servers />
   </component>
