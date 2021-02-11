@@ -12,8 +12,8 @@
     <list default="true" id="a786998a-c645-40e0-9f20-5351efde46eb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cub3d.c" beforeDir="false" afterPath="$PROJECT_DIR$/cub3d.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/cub3d.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/cub3d.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_atoi.c" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_atoi.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_parser/get_color.c" beforeDir="false" afterPath="$PROJECT_DIR$/file_parser/get_color.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_parser/get_resolution.c" beforeDir="false" afterPath="$PROJECT_DIR$/file_parser/get_resolution.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,9 +39,9 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -61,6 +61,7 @@
       <workItem from="1612633218452" duration="1856000" />
       <workItem from="1612685331531" duration="2576000" />
       <workItem from="1612953285566" duration="11160000" />
+      <workItem from="1613044689401" duration="4420000" />
     </task>
     <servers />
   </component>
