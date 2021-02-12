@@ -22,7 +22,7 @@ int		ft_strlen(const char *s)
 	return (i);
 }
 
-char	*ft_strjoin(char *s1, char *s2, int length, int i)
+char	*ft_strjoin_gnl(char *s1, char *s2, int length, int i)
 {
 	int		s1cnt;
 	int		s2cnt;

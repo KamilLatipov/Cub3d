@@ -1,6 +1,6 @@
 void	skip_space(char *line, int *i)
 {
-	while (line[*i] == ' ' || line[*i] >= 8 && line[*i] <= 13))
+	while (line[*i] == ' ' || line[*i] >= 8 && line[*i] <= 13)
 		*i += 1;
 }
 

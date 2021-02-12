@@ -18,8 +18,8 @@
 # include <fcntl.h>
 
 int		get_next_line(int fd, char **line);
-int		ft_strlen(const char *s);
-char	*ft_strjoin(char *s1, char *s2, int length, int i);
+//int		ft_strlen(const char *s);
+char	*ft_strjoin_gnl(char *s1, char *s2, int length, int i);
 char	*ft_get_line(int fd, char **line, char *remainder, int *ret);
 char	*ft_free(char *buffer, char *remainder);
 

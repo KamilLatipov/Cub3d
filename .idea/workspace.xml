@@ -11,8 +11,27 @@
   <component name="ChangeListManager">
     <list default="true" id="a786998a-c645-40e0-9f20-5351efde46eb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cub3d.c" beforeDir="false" afterPath="$PROJECT_DIR$/cub3d.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cub3d.o" beforeDir="false" afterPath="$PROJECT_DIR$/cub3d.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_parser/get_color.c" beforeDir="false" afterPath="$PROJECT_DIR$/file_parser/get_color.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_parser/get_map.c" beforeDir="false" afterPath="$PROJECT_DIR$/file_parser/get_map.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_parser/get_resolution.c" beforeDir="false" afterPath="$PROJECT_DIR$/file_parser/get_resolution.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_parser/utils.c" beforeDir="false" afterPath="$PROJECT_DIR$/file_parser/utils.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gnl/get_next_line.c" beforeDir="false" afterPath="$PROJECT_DIR$/gnl/get_next_line.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gnl/get_next_line.h" beforeDir="false" afterPath="$PROJECT_DIR$/gnl/get_next_line.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gnl/get_next_line_utils.c" beforeDir="false" afterPath="$PROJECT_DIR$/gnl/get_next_line_utils.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/cub3d.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/cub3d.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libft/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/libft/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_atoi.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_atoi.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_lstadd_back.c" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_lstadd_back.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_lstadd_front.c" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_lstadd_front.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_lstclear.c" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_lstclear.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_lstdel_one.c" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_lstdel_one.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_lstnew.c" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_lstnew.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/libft.a" beforeDir="false" afterPath="$PROJECT_DIR$/libft/libft.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libft/libft.h" beforeDir="false" afterPath="$PROJECT_DIR$/libft/libft.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mlx/libmlx.a" beforeDir="false" afterPath="$PROJECT_DIR$/mlx/libmlx.a" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +39,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ClangdSettings">
+    <option name="clangTidyViaClangd" value="false" />
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="Git.Settings">
@@ -36,6 +56,13 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -54,6 +81,10 @@
       <workItem from="1612685331531" duration="2576000" />
       <workItem from="1612953285566" duration="11160000" />
       <workItem from="1613044689401" duration="5095000" />
+      <workItem from="1613060323119" duration="309000" />
+      <workItem from="1613128668540" duration="560000" />
+      <workItem from="1613134317848" duration="73000" />
+      <workItem from="1613134579441" duration="3430000" />
     </task>
     <servers />
   </component>
