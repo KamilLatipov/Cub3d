@@ -1,9 +1,13 @@
 #include "../include/cub3d.h"
 
-void 	get_map(t_info *list, char *line, char *map)
+int 	get_map(t_info *list, char *line, t_list **head)
 {
 	if (!is_map(line))
-		return (NULL); //Обработать ошибку;
-	ft_lstadd_back(&list->head, ft_lstnew(line));
+		return (0); //Обработать ошибку
+    list->map_exist = 1;
+    //if (head)
+      // printf("head content before = %s\n", *head->content);
+    ft_lstadd_back(head, ft_lstnew(line));
+   // printf("head content = %s\n", *head->content);
+    return (1);
 }
-

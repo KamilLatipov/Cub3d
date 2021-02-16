@@ -17,9 +17,10 @@ int	get_color(int *color, char *line)
 	b = ft_atoi(&line[i], &i);
 	i++;
 	skip_space(line, &i);
+    *color = 2;
 	if (r > 255 || r < 0
 		|| g > 255 || g < 0 || b > 255 || b < 0 || line[i] != '\0')
 		return (0); //Обработать ошибку
-	*color =  r << 16 | g << 8 | b;
+	//*color =  r << 16 | g << 8 | b;
 	return (1);
 }

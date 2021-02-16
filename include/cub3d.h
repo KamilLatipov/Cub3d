@@ -9,6 +9,7 @@
 # include "../mlx/mlx.h"
 # include <math.h>
 # include <mlx.h>
+# include <stdio.h>
 
 typedef struct	s_info
 {
@@ -18,7 +19,6 @@ typedef struct	s_info
     int res_x;
     int res_y;
     char **map;
-    t_list *head;
 }				t_info;
 
 typedef struct  s_data {
@@ -32,11 +32,13 @@ typedef struct  s_data {
 int		get_next_line(int fd, char **line);
 //int		ft_strlen(const char *s);
 int 	main(int fd, char *argv[]);
+void 	parse_file(t_info *list, char *line,t_list **head);
+void            my_mlx_pixel_put(t_data *data, int x, int y, int color);
 int 	is_map(char *line);
 void	skip_space(char *line, int *i);
 int     get_color(int *color, char *line);
-void 	get_map(t_info *list, char *line, char *map);
+int 	get_map(t_info *list, char *line, t_list **head);
 int     get_resolution(t_info *list, char *line);
-void	fill_map_array(t_list **head, int size);
+char**	fill_map_array(t_list **head, int size);
 
 #endif
