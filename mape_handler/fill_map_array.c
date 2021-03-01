@@ -7,14 +7,14 @@ char **fill_map_array(t_list **head, int size)
 
 	map = malloc((size + 1) * sizeof(char *));
 	ft_bzero(map, sizeof(size + 1));
-	i = -1;
+	i = 0;
 	t_list	*tmp = *head;
 	while (tmp)
 	{
-		map[++i] = tmp->content;
+		map[i++] = tmp->content;
 		tmp = tmp->next;
 	}
-	i = 0;
+    map[i] = NULL;
 	return (map);
 }
 

@@ -56,6 +56,7 @@ int		get_next_line(int fd, char **line)
 	ret = 1;
 	if (fd < 0 || line == NULL)
 		return (-1);
+    *line = NULL;
 	if (remainder == NULL)
 	{
 		if ((remainder = ft_strjoin_gnl(0, 0, -1, 0)) == NULL)

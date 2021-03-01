@@ -11,22 +11,24 @@
   <component name="ChangeListManager">
     <list default="true" id="a786998a-c645-40e0-9f20-5351efde46eb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cub3d" beforeDir="false" afterPath="$PROJECT_DIR$/cub3d" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cub3d.c" beforeDir="false" afterPath="$PROJECT_DIR$/cub3d.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cub3d.o" beforeDir="false" afterPath="$PROJECT_DIR$/cub3d.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file_parser/get_color.c" beforeDir="false" afterPath="$PROJECT_DIR$/file_parser/get_color.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file_parser/get_color.o" beforeDir="false" afterPath="$PROJECT_DIR$/file_parser/get_color.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/file_parser/get_map.c" beforeDir="false" afterPath="$PROJECT_DIR$/file_parser/get_map.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/file_parser/get_resolution.c" beforeDir="false" afterPath="$PROJECT_DIR$/file_parser/get_resolution.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file_parser/utils.c" beforeDir="false" afterPath="$PROJECT_DIR$/file_parser/utils.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_parser/get_resolution.o" beforeDir="false" afterPath="$PROJECT_DIR$/file_parser/get_resolution.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gnl/get_next_line.c" beforeDir="false" afterPath="$PROJECT_DIR$/gnl/get_next_line.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gnl/get_next_line.o" beforeDir="false" afterPath="$PROJECT_DIR$/gnl/get_next_line.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/cub3d.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/cub3d.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/libft/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_lstadd_back.c" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_lstadd_back.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_lstadd_back.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_lstadd_back.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libft/ft_lstsize.c" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_lstsize.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libft/libft.a" beforeDir="false" afterPath="$PROJECT_DIR$/libft/libft.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mape_handler/fill_map_array.c" beforeDir="false" afterPath="$PROJECT_DIR$/mape_handler/fill_map_array.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mape_handler/fill_map_array.o" beforeDir="false" afterPath="$PROJECT_DIR$/mape_handler/fill_map_array.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mlx/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/mlx/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mlx/libmlx.a" beforeDir="false" afterPath="$PROJECT_DIR$/mlx/libmlx.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mlx/mlx.h" beforeDir="false" afterPath="$PROJECT_DIR$/mlx/mlx.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.cub" beforeDir="false" afterPath="$PROJECT_DIR$/test.cub" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +46,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -51,6 +54,13 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -75,6 +85,15 @@
       <workItem from="1613134579441" duration="4028000" />
       <workItem from="1613417149446" duration="10000" />
       <workItem from="1613489927155" duration="513000" />
+      <workItem from="1613584028979" duration="250000" />
+      <workItem from="1614004631129" duration="596000" />
+      <workItem from="1614027267930" duration="570000" />
+      <workItem from="1614030179090" duration="12000" />
+      <workItem from="1614341784083" duration="592000" />
+      <workItem from="1614432242801" duration="1063000" />
+      <workItem from="1614450894302" duration="83000" />
+      <workItem from="1614600517263" duration="572000" />
+      <workItem from="1614610367133" duration="5614000" />
     </task>
     <servers />
   </component>
@@ -86,5 +105,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="464" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1612547042295" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1614611246740">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1614611246740" />
   </component>
 </project>
