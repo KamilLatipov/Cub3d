@@ -1,6 +1,6 @@
 #include "../include/cub3d.h"
 
-void calc_delta(t_info *list, t_calc *calc)
+static void calc_delta(t_info *list, int x)
 {
 	float dirX;
 	float dirY;
@@ -8,113 +8,117 @@ void calc_delta(t_info *list, t_calc *calc)
 	float rayDirX;
 	float rayDirY;
 
-	dirX = list.plr.dirX;
-	dirY = list.plr.dirY;
-	cameraX = 2*x/list->res_x - 1; //x-coordinate in camera space
-	rayDirX = dirX + planeX*cameraX;
-	rayDirY = dirY + planeY*cameraX;
+	dirX = list->dirX;
+	dirY = list->dirY;
+	cameraX = 2*x/(float)list->res_x - 1; //x-coordinate in camera space
+	rayDirX = dirX + list->planeX*cameraX;
+	rayDirY = dirY + list->planeY*cameraX;
 
 	//length of ray from one x or y-side to next x or y-side
-	calc.deltaDistX = (rayDirY == 0) ? 0 : ((rayDirX == 0) ? 1 : fabs(1
-			/ rayDirX));
-	calc.deltaDistY = (rayDirX == 0) ? 0 : ((rayDirY == 0) ? 1 : fabs(1 /
-			rayDirY));
-	calc.rayDirX = rayDirX;
-	calc.rayDirY = rayDirY;
+	list->deltaDistX = (rayDirY == 0) ? 0 : ((rayDirX == 0) ? 1 : fabs(1 / rayDirX));
+	list->deltaDistY = (rayDirX == 0) ? 0 : ((rayDirY == 0) ? 1 : fabs(1 / rayDirY));
+	list->rayDirX = rayDirX;
+	list->rayDirY = rayDirY;
+    //printf("%i, %f, %f\n", x, cameraX, list->sideDistX);
 }
 
-void find_side_dist(t_calc *calc)
+static void find_side_dist(t_info *list, int mapX, int mapY)
 {
-	if (calc.rayDirX < 0)
+	if (list->rayDirX < 0)
 	{
-		calc.stepX = -1;
-		calc.sideDistX = (posX - mapX) * calc.deltaDistX;
+		list->stepX = -1;
+		list->sideDistX = (list->posX - mapX) * list->deltaDistX;
 	}
 	else
 	{
-		calc.stepX = 1;
-		calc.sideDistX = (mapX + 1.0 - posX) * calc.deltaDistX;
+		list->stepX = 1;
+		list->sideDistX = (mapX + 1.0 - list->posX) * list->deltaDistX;
 	}
-	if (calc.rayDirY < 0)
+	if (list->rayDirY < 0)
 	{
-		calc.stepY = -1;
-		calc.sideDistY = (posY - mapY) * deltaDistY;
+		list->stepY = -1;
+		list->sideDistY = (list->posY - mapY) * list->deltaDistY;
 	}
 	else
 	{
-		calc.stepY = 1;
-		calc.sideDistY = (mapY + 1.0 - posY) * deltaDistY;
+		list->stepY = 1;
+		list->sideDistY = (mapY + 1.0 - list->posY) * list->deltaDistY;
 	}
 }
 
-void find_wall_hit(t_calc *calc)
+void find_wall_hit(t_info *list, int *mapX, int *mapY)
 {
 	int hit = 0;
 	while (hit == 0)
 	{
 		//jump to next map square, OR in x-direction, OR in y-direction
-		if (calc.sideDistX < calc.sideDistY)
+		if (list->sideDistX < list->sideDistY)
 		{
-			calc.sideDistX += calc.deltaDistX;
-			mapX += calc.stepX;
-			calc.side = 0;
+			list->sideDistX += list->deltaDistX;
+			*mapX += list->stepX;
+			list->side = 0;
 		}
 		else
 		{
-			calc.sideDistY += calc.deltaDistY;
-			mapY += calc.stepY;
-			calc.side = 1;
+			list->sideDistY += list->deltaDistY;
+			*mapY += list->stepY;
+			list->side = 1;
 		}
-		if (list->map[mapX][mapY] - 48 > 0)
+		if (list->map[*mapX][*mapY] - 48 > 0)
 		{
 			hit = 1;
 		}
 	}
 }
 
-float find_perp_dist(t_calc *calc, t_info *list, int mapX,int mapY)
+static void find_perp_dist(t_info *list, int mapX,int mapY)
 {
-	if (calc.side == 0)
-		calc.perpWallDist = (float)(mapX - list.plr.posX + (1 - calc.stepX) /
-				2) / calc.rayDirX;
+	if (list->side == 0)
+    {
+		list->perpWallDist = (float)(mapX - list->posX + (1 - list->stepX) /
+				2) / list->rayDirX;
+    }
 	else
-		calc.perpWallDist = (float)(mapY - list.plr.posY + (1 - calc.stepY) /
-				2) / calc.rayDirY;
+    {
+		list->perpWallDist = (float)(mapY - list->posY + (1 - list->stepY) /
+				2) / list->rayDirY;
+    }
 }
 
-int find_line_height(t_calc *calc, t_info *list)
+static void find_line_height(t_info *list)
 {
-	calc.lineHeight = (int)(list->res_y / calc.perpWallDist);
-	if (calc.perpWallDist == 0)
-		calc.lineHeight = list->res_y;lineHeight = list->res_y;
+	list->lineHeight = (list->res_y / list->perpWallDist);
+	if (list->perpWallDist == 0)
+		list->lineHeight = list->res_y;
 }
 
-void draw_screen(t_info *list, t_mlx *mlx, t_data *img)
+void draw_screen(t_info *list, t_mlx *mlx)
 {
 	int x;
 	int mapX;
 	int mapY;
-	t_calc	calc;
 	t_data	img;
+    int hit;
+    int drawStart;
 
-	img.img = mlx_new_image(mlx.mlx, list->res_x, list->res_y);
+	img.img = mlx_new_image(mlx->mlx, list->res_x, list->res_y);
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length,
 								 &img.endian);
 	x = -1;
 	while (++x < list->res_x)
 	{
 		hit = 0;
-		mapX = (int)list.plr.posX;
-		mapY = (int)list.plr.posY;
+		mapX = (int)list->posX;
+		mapY = (int)list->posY;
 
-		calc_delta(list, &calc);
-		find_side_dist(&calc);
-		find_wall_hit(&calc);
-		calc.perpWallDist = find_perp_dist(&calc, side, mapX, mapY);
-		calc.lineHeight = find_line_height(&calc, list);
-		int drawStart = -lineHeight / 2 + list->res_y / 2;
+		calc_delta(list, x);
+		find_side_dist(list, mapX, mapY);
+		find_wall_hit(list, &mapX, &mapY);
+		find_perp_dist(list, mapX, mapY);
+		find_line_height(list);
+		drawStart = -list->lineHeight / 2 + list->res_y / 2;
 		if(drawStart < 0) drawStart = 0;
-		int drawEnd = lineHeight / 2 + list->res_y / 2;
+		int drawEnd = list->lineHeight / 2 + list->res_y / 2;
 		if(drawEnd >= list->res_y) drawEnd = list->res_y - 1;
 		int color;
 		switch(list->map[mapX][mapY])
@@ -122,14 +126,14 @@ void draw_screen(t_info *list, t_mlx *mlx, t_data *img)
 			case 1:  color = 0X00FFFF00;  break; //red
 			default: color = 0x00FF0000; break; //yellow
 		}
-		if (side == 1) {color = color / 2;}
+		if (list->side == 1) {color = color / 2;}
 		while (drawStart < drawEnd)
 		{
 			my_mlx_pixel_put(&img, x, drawStart, 0x00FF0000);
 			drawStart++;
 		}
 	}
-	mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
-	mlx_destroy_image(mlx.mlx, img);
+	mlx_put_image_to_window(mlx->mlx, mlx->win, img.img, 0, 0);
+	mlx_destroy_image(mlx->mlx, img.img);
 }
 

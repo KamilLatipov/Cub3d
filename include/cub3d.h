@@ -11,43 +11,6 @@
 # include <mlx.h>
 # include <stdio.h>
 
-typedef struct  s_calc {
-	float deltaDistX;
-	float deltaDistY;
-	float rayDirX;
-	float rayDirY;
-	float sideDistX;
-	float sideDistY;
-	int stepX;
-	int stepY;
-	int side;
-	float perpWallDist;
-}               t_calc;
-
-typedef struct  s_plr {
-	float posX;
-	float poxY;
-	float dirX;
-	float dirY;
-	float planeX;
-	float planeY = 0.66;
-}               t_plr;
-
-typedef struct	s_info
-{
-    int map_exist;
-    int floor;
-    int clng;
-    int res_x;
-    int res_y;
-    int plr_x;
-    int plr_y;
-    char **map;
-	t_plr	*plr;
-	t_mlx	*mlx;
-	t_img	*img;
-}				t_info;
-
 typedef struct  s_data {
 	void        *img;
 	char        *addr;
@@ -60,6 +23,35 @@ typedef struct  s_mlx {
 	void        *mlx;
 	void 		*win;
 }               t_mlx;
+
+typedef struct	s_info
+{
+    float deltaDistX;
+	float deltaDistY;
+	float rayDirX;
+	float rayDirY;
+	float sideDistX;
+	float sideDistY;
+	int stepX;
+	int stepY;
+	int side;
+	float perpWallDist;
+    float lineHeight;
+    float posX;
+	float posY;
+	float dirX;
+	float dirY;
+	float planeX;
+	float planeY;
+    int map_exist;
+    int floor;
+    int clng;
+    int res_x;
+    int res_y;
+    char **map;
+	t_mlx	*mlx;
+	t_data	*img;
+}				t_info;
 
 int		get_next_line(int fd, char **line);
 //int		ft_strlen(const char *s);
@@ -75,6 +67,8 @@ char**	fill_map_array(t_list **head, int size);
 void    put_pixel_square(int i, int j, t_data *img);
 void	init_window(t_info *list);
 void	ft_init_player(t_info *list);
-void	draw_screen(t_info *list, t_mlx *mlx, t_data *img);
+void    draw_screen(t_info *list, t_mlx *mlx);
+int     key_press(int key, t_info *list);
+void    find_wall_hit(t_info *list, int *mapX,int *mapY);
 
 #endif

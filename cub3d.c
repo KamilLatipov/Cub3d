@@ -37,15 +37,12 @@ void 	parse_file(t_info *list, char *line, t_list **head)
 
 void	ft_init_player(t_info *list)
 {
-	t_plr plr;
-
-	plr.posX = 3;
-	plr.poxY = 2.5;
-	plr.dirX = -1;
-	plr.dirY = 0;
-	plr.planeX = 0;
-	plr. planeY = 0.66;
-	list.plr = &plr;
+	list->posX = 3.5;
+	list->posY = 3.5;
+	list->dirX = -1.0;
+	list->dirY = 0.0;
+	list->planeX = 0.0;
+	list->planeY = 0.66;
 }
 
 int     main(int arg, char **argv)
@@ -55,10 +52,12 @@ int     main(int arg, char **argv)
 	int ret;
 	char *line;
     t_list  *head;
+    t_mlx	mlx;
 
+    arg = 0;
     list = calloc(1, sizeof(t_info));
-    ft_bzero(list, sizeof(t_info));
     head = NULL;
+	mlx.mlx = mlx_init();
 	fd = open(argv[1], O_RDONLY); //Обработать ошибку, если fd < 0
     if (fd <= 0)
         return (0);
@@ -69,9 +68,13 @@ int     main(int arg, char **argv)
 		parse_file(list, line, &head);
     }
 	ft_lstadd_back(&head, ft_lstnew(line));
+    mlx.win = mlx_new_window(mlx.mlx, list->res_x, list->res_y, "Hello world!");
 	list->map = fill_map_array(&head, ft_lstsize(head));
 	ft_init_player(list);
-	close(fd);
-	init_window(list);
+    list->mlx = &mlx;
+	draw_screen(list, list->mlx);
+    mlx_key_hook(list->mlx->win, key_press, list);
+    mlx_loop(mlx.mlx);
+    close(fd);
 }
 
