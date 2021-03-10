@@ -11,24 +11,11 @@
   <component name="ChangeListManager">
     <list default="true" id="a786998a-c645-40e0-9f20-5351efde46eb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cub3d" beforeDir="false" afterPath="$PROJECT_DIR$/cub3d" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cub3d.c" beforeDir="false" afterPath="$PROJECT_DIR$/cub3d.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cub3d.o" beforeDir="false" afterPath="$PROJECT_DIR$/cub3d.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file_parser/get_map.c" beforeDir="false" afterPath="$PROJECT_DIR$/file_parser/get_map.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file_parser/get_resolution.c" beforeDir="false" afterPath="$PROJECT_DIR$/file_parser/get_resolution.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file_parser/get_resolution.o" beforeDir="false" afterPath="$PROJECT_DIR$/file_parser/get_resolution.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gnl/get_next_line.c" beforeDir="false" afterPath="$PROJECT_DIR$/gnl/get_next_line.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gnl/get_next_line.o" beforeDir="false" afterPath="$PROJECT_DIR$/gnl/get_next_line.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/cub3d.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/cub3d.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_lstsize.c" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_lstsize.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/libft.a" beforeDir="false" afterPath="$PROJECT_DIR$/libft/libft.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mape_handler/fill_map_array.c" beforeDir="false" afterPath="$PROJECT_DIR$/mape_handler/fill_map_array.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mape_handler/fill_map_array.o" beforeDir="false" afterPath="$PROJECT_DIR$/mape_handler/fill_map_array.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/mlx/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx/libmlx.a" beforeDir="false" afterPath="$PROJECT_DIR$/mlx/libmlx.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx/mlx.h" beforeDir="false" afterPath="$PROJECT_DIR$/mlx/mlx.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.cub" beforeDir="false" afterPath="$PROJECT_DIR$/test.cub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/init_window.c" beforeDir="false" afterPath="$PROJECT_DIR$/engine/init_window.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/init_window.o" beforeDir="false" afterPath="$PROJECT_DIR$/engine/init_window.o" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,13 +41,6 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -94,6 +74,7 @@
       <workItem from="1614450894302" duration="83000" />
       <workItem from="1614600517263" duration="572000" />
       <workItem from="1614610367133" duration="5614000" />
+      <workItem from="1614859989456" duration="286000" />
     </task>
     <servers />
   </component>
