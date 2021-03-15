@@ -17,19 +17,14 @@ typedef struct  s_data {
 	int         bits_per_pixel;
 	int         line_length;
 	int         endian;
+    int         width;
+    int         height;
 }               t_data;
 
 typedef struct  s_mlx {
 	void        *mlx;
 	void 		*win;
 }               t_mlx;
-
-typedef struct  s_text {
-    unsigned int    *n;
-    unsigned int    *w;
-    unsigned int    *e;
-    unsigned int    *s;
-}               t_text;
 
 typedef struct	s_info
 {
@@ -58,7 +53,11 @@ typedef struct	s_info
     char **map;
     int plr;
     int max_size;
-    t_text  text;
+    char *line;
+    t_data  n;
+    t_data  w;
+    t_data  s;
+    t_data  e;
 	t_mlx	*mlx;
 	t_data	*img;
 }				t_info;
@@ -80,7 +79,7 @@ void	ft_init_player(t_info *list);
 void    draw_screen(t_info *list, t_mlx *mlx);
 int     key_press(int key, t_info *list);
 void    find_wall_hit(t_info *list, int *mapX,int *mapY);
-int		get_wall_texture(t_info *list, unsigned int **adr, char *line, int *i);
+int		get_wall_texture(t_info *list, char side, char *line, int *i);
 int		check_name(char *arg, char *ext);
 unsigned int my_mlx_pixel_take(t_data *data, int x, int y);
 

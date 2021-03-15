@@ -10,11 +10,10 @@ static void calc_delta(t_info *list, int x)
 
 	dirX = list->dirX;
 	dirY = list->dirY;
-	cameraX = 2*x/(float)list->res_x - 1; //x-coordinate in camera space
+	cameraX = 2*x/(float)list->res_x - 1;
 	rayDirX = dirX + list->planeX*cameraX;
 	rayDirY = dirY + list->planeY*cameraX;
 
-	//length of ray from one x or y-side to next x or y-side
 	list->deltaDistX = (rayDirY == 0) ? 0 : ((rayDirX == 0) ? 1 : fabs(1 / rayDirX));
 	list->deltaDistY = (rayDirX == 0) ? 0 : ((rayDirY == 0) ? 1 : fabs(1 / rayDirY));
 	list->rayDirX = rayDirX;
@@ -90,13 +89,31 @@ static void find_line_height(t_info *list)
 		list->lineHeight = list->res_y;
 }
 
+static unsigned int choose_tex(t_info *list, int texX, int texY)
+{
+    if (!list->side)
+    {
+        if (list->stepX == 1)
+            return (my_mlx_pixel_take(&list->n, texX, texY));
+        else if (list->stepX == -1)
+            return (my_mlx_pixel_take(&list->w, texX, texY));
+    }
+    else
+    {
+        if (list->stepY == -1)
+            return (my_mlx_pixel_take(&list->s, texX, texY));
+        else if (list->stepY == 1)
+         return (my_mlx_pixel_take(&list->e, texX, texY));
+    }
+    return (0);
+}
+
 void draw_screen(t_info *list, t_mlx *mlx)
 {
 	int x;
 	int mapX;
 	int mapY;
 	t_data	img;
-    t_data  tex_addr;
     int hit;
     float drawStart;
 
@@ -119,24 +136,22 @@ void draw_screen(t_info *list, t_mlx *mlx)
 		if(drawStart < 0) drawStart = 0;
 		float drawEnd = list->lineHeight / 2 + list->res_y / 2;
 		if(drawEnd >= list->res_y) drawEnd = list->res_y - 1;
-		double wallX; //where exactly the wall was hit
+		double wallX;
         if (list->side == 0) wallX = list->posY + list->perpWallDist * list->rayDirY;
         else           wallX = list->posX + list->perpWallDist * list->rayDirX;
         wallX -= floor((wallX));
-        int texWidth = 64;
-        //x coordinate on the texture
-        int texX = (int)(wallX * (double)texWidth);
-        if(list->side == 0 && list->rayDirX > 0) texX = texWidth - texX - 1;
-        if(list->side == 1 && list->rayDirY < 0) texX = texWidth - texX - 1;
-        double step = 1.0 * 64 / list->lineHeight;
+        int texX = (int)(wallX * (double)list->n.width);
+        if(list->side == 0 && list->rayDirX > 0) texX = list->n.width - texX - 1;
+        if(list->side == 1 && list->rayDirY < 0) texX = list->n.width - texX - 1;
+        double step = 1.0 * (list->n.width / list->lineHeight);
         double texPos = (drawStart - list->res_y / 2 + list->lineHeight / 2) * step;
+
 		while (drawStart < drawEnd)
 		{
-            int texY = (int)texPos & (64 - 1);
-            tex_addr.addr = mlx_get_data_addr(list->text.n, &tex_addr.bits_per_pixel, &tex_addr.line_length,
-                &tex_addr.endian);
-            unsigned int color = my_mlx_pixel_take(&tex_addr, texX, texY);
+            int texY = (int)texPos & (list->n.width - 1);
+            unsigned int color = choose_tex(list, texX ,texY);
             texPos += step;
+            
 			my_mlx_pixel_put(&img, x, drawStart, color);
 			drawStart++;
 		}

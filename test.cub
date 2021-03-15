@@ -1,17 +1,16 @@
-R 1080 900
-NO ./textures/wall1.xpm
-SO ./textures/wall2.xpm
-WE ./textures/wall3.xpm
-EA ./textures/wall4.xpm
+R 900 400
+NO ./textures/brick.xpm
+SO ./textures/blue.xpm
+WE ./textures/grey.xpm
+EA ./textures/wood.xpm
 
-S ./textures/chest.xpm
 F 224,172,105
 C 205,249,255
 
 111111111111111
- 11000000000001
+ 110000000000011
   110000000000011
-111000S00000111
+111000S000001111
 1000000000001
 1000000000001
 1111111111111
