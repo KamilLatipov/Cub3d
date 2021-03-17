@@ -52,7 +52,9 @@ typedef struct	s_info
     int res_y;
     char **map;
     int plr;
+    int	fd;
     int max_size;
+    int max_height;
     char *line;
     t_data  n;
     t_data  w;

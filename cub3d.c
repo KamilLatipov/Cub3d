@@ -58,7 +58,6 @@ void	ft_init_player(t_info *list)
 int     main(int arg, char **argv)
 {
 	t_info *list;
-	int fd;
 	int ret;
 	char *line;
     t_list  *head;
@@ -69,15 +68,16 @@ int     main(int arg, char **argv)
     head = NULL;
 	mlx.mlx = mlx_init();
     list->mlx = &mlx;
-	fd = open(argv[1], O_RDONLY); //Обработать ошибку, если fd < 0
-    if (fd <= 0)
+	list->fd = open(argv[1], O_RDONLY); //Обработать ошибку, если fd < 0
+    if (list->fd <= 0)
         return (0);
-	while ((ret = get_next_line(fd, &line)))
+	while ((ret = get_next_line(list->fd, &line)))
 	{
         if (ret == -1)
             return (0);
 		parse_file(list, line, &head);
     }
+	close(list->fd);
 	ft_lstadd_back(&head, ft_lstnew(line));
     list->mlx->win = mlx_new_window(mlx.mlx, list->res_x, list->res_y, "Cub3D");
 	list->map = fill_map_array(&head, ft_lstsize(head), list);
@@ -85,6 +85,5 @@ int     main(int arg, char **argv)
     draw_screen(list, list->mlx);
     mlx_hook(list->mlx->win, 2, 1L<<0, key_press, list);
     mlx_loop(mlx.mlx);
-    close(fd);
 }
 

@@ -39,15 +39,59 @@ static char *fill_max_str(char *line, t_info *list)
     return (str);
 }
 
+static void check_map(char **map, t_info *list, int x, int y)
+{
+	if (map[y][x] == '1' || map[y][x] == 'x')
+		return (0);
+	if (map[y][x] == ' ' || ((y == 0 || x == 0 || x == list->max_size - 1
+							  || y == list->max_height - 1) && map[y][x] != 1))
+		return (1);
+	if (map[y][x] == '0' || map[y][x] == '2')
+		map[y][x] = 'x';
+	if (x < list->max_size - 1)
+		check_map(game, map, x + 1, y);
+	if (x > 0)
+		check_map(game, map, x - 1, y);
+	if (y < list->max_height - 1)
+		check_map(game, map, x, y + 1);
+	if (y > 0)
+		check_map(game, map, x, y - 1);
+	if (x < list->max_size - 1 && y < list->max_height - 1)
+		check_map(game, map, x + 1, y + 1);
+	if (x < list->max_size - 1 && y > 0)
+		check_map(game, map, x + 1, y - 1);
+	if (x > 0 && y > 0)
+		check_map(game, map, x - 1, y - 1);
+	if (x > 0 && y < list->max_height - 1)
+		check_map(game, map, x - 1, y + 1);
+	return (0);
+}
+
+static void copy_map(char **map, int i, t_info *list)
+{
+	char *map_check[i];
+	int j;
+
+	j = 0;
+	while (j < i)
+	{
+		map_check[j] = ft_strdup(map[j]);
+		j++;
+	}
+	map_check[j] = NULL;
+	check_map(map_check, list, list->posY, list->posX);
+}
+
 char **fill_map_array(t_list **head, int size, t_info *list)
 {
-	char	  **map;
+	char 	**map;
 	int		  i;
+	t_list	*tmp
 
 	map = malloc((size + 1) * sizeof(char *));
 	ft_bzero(map, sizeof(size + 1));
 	i = 0;
-	t_list	*tmp = *head;
+	tmp = *head;
 	while (tmp)
 	{
 		map[i++] = fill_max_str(tmp->content, list);
@@ -61,6 +105,8 @@ char **fill_map_array(t_list **head, int size, t_info *list)
 		tmp = tmp->next;
     }
     map[i] = NULL;
+	list->max_height = i;
+	copy_map(map, i, list);
 	return (map);
 }
 

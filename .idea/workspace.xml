@@ -10,18 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a786998a-c645-40e0-9f20-5351efde46eb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/cub3d" beforeDir="false" afterPath="$PROJECT_DIR$/cub3d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cub3d.c" beforeDir="false" afterPath="$PROJECT_DIR$/cub3d.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cub3d.o" beforeDir="false" afterPath="$PROJECT_DIR$/cub3d.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/draw_screen.c" beforeDir="false" afterPath="$PROJECT_DIR$/engine/draw_screen.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/draw_screen.o" beforeDir="false" afterPath="$PROJECT_DIR$/engine/draw_screen.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/init_window.o" beforeDir="false" afterPath="$PROJECT_DIR$/engine/init_window.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file_parser/get_texture.c" beforeDir="false" afterPath="$PROJECT_DIR$/file_parser/get_texture.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file_parser/get_texture.o" beforeDir="false" afterPath="$PROJECT_DIR$/file_parser/get_texture.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/cub3d.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/cub3d.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/libft.a" beforeDir="false" afterPath="$PROJECT_DIR$/libft/libft.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx/libmlx.a" beforeDir="false" afterPath="$PROJECT_DIR$/mlx/libmlx.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.cub" beforeDir="false" afterPath="$PROJECT_DIR$/test.cub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mape_handler/fill_map_array.c" beforeDir="false" afterPath="$PROJECT_DIR$/mape_handler/fill_map_array.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +75,8 @@
       <workItem from="1614859989456" duration="286000" />
       <workItem from="1615373412395" duration="319000" />
       <workItem from="1615662762767" duration="94000" />
+      <workItem from="1615807051731" duration="657000" />
+      <workItem from="1615810318666" duration="1828000" />
     </task>
     <servers />
   </component>
