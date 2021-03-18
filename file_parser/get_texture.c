@@ -10,6 +10,8 @@ static void choose_side(t_info *list, char side, t_data tex)
         list->w = tex;
     else if (side == 'E')
         list->e = tex;
+    else if (side == 'C')
+        list->sprt_text = tex;
 }
 
 static int ft_xpm(t_info *list, char side, char *file)
@@ -25,8 +27,6 @@ static int ft_xpm(t_info *list, char side, char *file)
 	if ((tex.img = mlx_xpm_file_to_image(list->mlx->mlx, file, &tex.width, &tex.height)) == NULL)
         return (-1);
 	tex.addr = mlx_get_data_addr(tex.img, &tex.bits_per_pixel, &tex.line_length, &tex.endian);
-    //tex.width = tex.line_length / tex.bits_per_pixel;
-    //tex.height = tex.line_length / tex.bits_per_pixel;
     choose_side(list, side, tex);
 	return (0);
 }

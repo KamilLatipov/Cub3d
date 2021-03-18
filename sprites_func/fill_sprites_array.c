@@ -52,10 +52,10 @@ static void	fill_sprites_array(t_info *list)
 	int		x;
 	int 	y;
 
-	s->sprts_number = find_sprts_number(list->map);
-	if (!(s->sprt = (t_sprt*)malloc(sizeof(t_sprt) * s->sprts_number)))
+	list->sprts_number = find_sprts_number(list->map);
+	if (!(list->sprt = (t_sprt*)malloc(sizeof(t_sprt) * list->sprts_number)))
 		handle_error(NULL, list, "malloc fail");
-	s_index = s->sprt;
+	s_index = list->sprt;
 	y = 0;
 	while (list->map[y])
 	{
@@ -72,7 +72,6 @@ static void	fill_sprites_array(t_info *list)
 		}
 		y++;
 	}
-	return (0);
 }
 
 static void sort_sprts_array(t_info *list)
@@ -85,18 +84,18 @@ static void sort_sprts_array(t_info *list)
 		return ;
 	while (i < list->sprts_number)
 	{
-		distances[i] = ((list->posX - list->sprts[i].x) *
-						(list->posX - list->sprts[i].x) +
-						(list->posY - list->sprts[i].y) *
-						(list->posY - list->sprts[i].y));
+		distances[i] = ((list->posX - list->sprt[i].x) *
+						(list->posX - list->sprt[i].x) +
+						(list->posY - list->sprt[i].y) *
+						(list->posY - list->sprt[i].y));
 		i++;
 	}
-	sort_sprts_bubble(s, distances);
+	sort_sprts_bubble(list, distances);
 	free(distances);
 }
 
 void 	handle_sprt(t_info *list)
 {
-	sort_sprts_bubble(list);
-	fill_sprites_array(list);
+    fill_sprites_array(list);
+    sort_sprts_array(list);
 }

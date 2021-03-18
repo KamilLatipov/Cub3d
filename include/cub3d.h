@@ -21,7 +21,7 @@ typedef struct  s_data {
     int         height;
 }               t_data;
 
-typedef strcut	s_sprt	{
+typedef struct	s_sprt	{
 	double 		x;
 	double 		y;
 	double 		dist;
@@ -76,10 +76,12 @@ typedef struct	s_info
     char *line;
     t_sprt	*sprt;
     int sprts_number;
+    double  *dist_buff;
     t_data  n;
     t_data  w;
     t_data  s;
     t_data  e;
+    t_data  sprt_text;
 	t_mlx	*mlx;
 	t_data	*img;
 }				t_info;

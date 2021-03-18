@@ -32,15 +32,17 @@ void 	parse_file(t_info *list, char *line, t_list **head)
 	else if (line[i] == 'R' && line[i + 1] == ' ' )
 		get_resolution(list, &line[i + 1]);
 	else if (line[i] == 'N' && line[i + 1] == 'O' && line[i + 2] == ' ')
-		get_wall_texture(list, 'N', line, & i);
+		get_wall_texture(list, 'N', line, &i);
 	else if (line[i] == 'S' && line[i + 1] == 'O' && line[i + 2] == ' ')
-		get_wall_texture(list, 'S', line, & i);
+		get_wall_texture(list, 'S', line, &i);
 	else if (line[i] == 'W' && line[i + 1] == 'E' && line[i + 2] == ' ')
-		get_wall_texture(list, 'W', line, & i);
+		get_wall_texture(list, 'W', line, &i);
 	else if (line[i] == 'E' && line[i + 1] == 'A' && line[i + 2] == ' ')
-		get_wall_texture(list, 'E', line, & i);
-	//else if (line[i] == 'S')
-	//	get_sprite_testure(list, line);
+		get_wall_texture(list, 'E', line, &i);
+    /*
+	else if (line[i] == 'S')
+        get_wall_texture(list, 'C', line, &i);
+        */
 	else if (line[i] == 'F' && line[i + 1] == ' ')
         get_color(&list->floor, &line[i]);
 	else if (line[i] == 'C' && line[i + 1] == ' ')
@@ -80,11 +82,10 @@ int     main(int arg, char **argv)
 	ft_lstadd_back(&head, ft_lstnew(line));
     list->mlx->win = mlx_new_window(mlx.mlx, list->res_x, list->res_y, "Cub3D");
 	list->map = fill_map_array(&head, ft_lstsize(head), list);
-	handle_sprt(list);
+	//handle_sprt(list);
 	ft_init_player(list);
     draw_screen(list, list->mlx);
     mlx_hook(list->mlx->win, 2, 1L<<0, key_press, list);
     mlx_loop(mlx.mlx);
     close(list->fd);
 }
-

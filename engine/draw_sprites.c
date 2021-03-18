@@ -31,9 +31,9 @@ static void	drawing_sprites(t_info *list, t_sprite *sp)
 	while (x_stripe < sp->drawendx)
 	{
 		x_text = (int)(256 * (x_stripe - (-sp->spritew / 2 + sp->spritescreenx))
-					   * s->text_sp->width / sp->spritew) / 256;
+					   * list->sprt_text.width / sp->spritew) / 256;
 		if (sp->transformy > 0 && x_stripe > 0 && x_stripe < list->res_x
-			&& sp->transformy < s->zbuffer[x_stripe])
+			&& sp->transformy < list->dist_buff[x_stripe])
 		{
 			drawing_ext(list, sp, x_stripe, x_text);
 		}
@@ -64,11 +64,11 @@ static void	pre_compute(t_info *list, t_sprite *sp, int i)
 	double	spritey;
 	double	transformx;
 
-	spritex = list->sprt[i].x - s->posx;
-	spritey = list->sprt[i].y - s->posy;
-	invdet = 1.0 / (list->planX * list->dirY - list->dirX * list->planY);
-	transformx = invdet * (list->dirY * spritex - list->dirX * spriteY);
-	sp->transformy = invdet * (-list->planY * spritex + list->planX * spritey);
+	spritex = list->sprt[i].x - list->posX;
+	spritey = list->sprt[i].y - list->posY;
+	invdet = 1.0 / (list->planeX * list->dirY - list->dirX * list->planeY);
+	transformx = invdet * (list->dirY * spritex - list->dirX * spritey);
+	sp->transformy = invdet * (-list->planeY * spritex + list->planeX * spritey);
 	sp->spritescreenx = (int)((list->res_x / 2) * (1 + transformx /
 			sp->transformy));
 	sp->spriteh = abs((int)(list->res_y / (sp->transformy)));
@@ -83,7 +83,7 @@ void		draw_sprites(t_info *list)
 	i = 0;
 	while (i < list->sprts_number)
 	{
-		pre_compute(s, &sprite_values, i);
+		pre_compute(list, &sprite_values, i);
 		drawing_computing(s, &sprite_values);
 		drawing_sprites(s, &sprite_values);
 		i++;

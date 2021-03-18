@@ -145,13 +145,15 @@ void draw_screen(t_info *list, t_mlx *mlx)
         if(list->side == 1 && list->rayDirY < 0) texX = list->n.width - texX - 1;
         double step = 1.0 * (list->n.width / list->lineHeight);
         double texPos = (drawStart - list->res_y / 2 + list->lineHeight / 2) * step;
-
+		list->dist_buff[x] = list->perpWallDist;
+        /*
         int k = 0;
         while (k++ < drawStart)
-        	my_mlx_pixel_put(&img, x, k, 0x00FFFFFF);
+        	my_mlx_pixel_put(&img, x, k, 0x0FFFF00);
         k = list->lineHeight;
         while (k-- > drawEnd)
-        	my_mlx_pixel_put(&img, x, k, 0x0FFFF00);
+        	my_mlx_pixel_put(&img, x, k, 0x0FF00);
+        */
 		while (drawStart < drawEnd)
 		{
             int texY = (int)texPos & (list->n.width - 1);
@@ -161,6 +163,7 @@ void draw_screen(t_info *list, t_mlx *mlx)
 			my_mlx_pixel_put(&img, x, drawStart, color);
 			drawStart++;
 		}
+		draw_sprites(list);
 	}
 	mlx_put_image_to_window(mlx->mlx, mlx->win, img.img, 0, 0);
 	mlx_destroy_image(mlx->mlx, img.img);

@@ -11,20 +11,19 @@
   <component name="ChangeListManager">
     <list default="true" id="a786998a-c645-40e0-9f20-5351efde46eb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cub3d" beforeDir="false" afterPath="$PROJECT_DIR$/cub3d" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cub3d.c" beforeDir="false" afterPath="$PROJECT_DIR$/cub3d.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cub3d.o" beforeDir="false" afterPath="$PROJECT_DIR$/cub3d.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/engine/draw_screen.c" beforeDir="false" afterPath="$PROJECT_DIR$/engine/draw_screen.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/engine/draw_screen.o" beforeDir="false" afterPath="$PROJECT_DIR$/engine/draw_screen.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/draw_sprites.c" beforeDir="false" afterPath="$PROJECT_DIR$/engine/draw_sprites.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/engine/init_window.o" beforeDir="false" afterPath="$PROJECT_DIR$/engine/init_window.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file_parser/get_map.o" beforeDir="false" afterPath="$PROJECT_DIR$/file_parser/get_map.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_parser/get_texture.c" beforeDir="false" afterPath="$PROJECT_DIR$/file_parser/get_texture.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/file_parser/get_texture.o" beforeDir="false" afterPath="$PROJECT_DIR$/file_parser/get_texture.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/cub3d.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/cub3d.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libft/libft.a" beforeDir="false" afterPath="$PROJECT_DIR$/libft/libft.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mape_handler/fill_map_array.c" beforeDir="false" afterPath="$PROJECT_DIR$/mape_handler/fill_map_array.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mape_handler/fill_map_array.o" beforeDir="false" afterPath="$PROJECT_DIR$/mape_handler/fill_map_array.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mlx/libmlx.a" beforeDir="false" afterPath="$PROJECT_DIR$/mlx/libmlx.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites_func/fill_sprites_array.c" beforeDir="false" afterPath="$PROJECT_DIR$/sprites_func/fill_sprites_array.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.cub" beforeDir="false" afterPath="$PROJECT_DIR$/test.cub" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,13 +50,6 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -97,7 +89,8 @@
       <workItem from="1615807051731" duration="657000" />
       <workItem from="1615810318666" duration="1828000" />
       <workItem from="1616059655950" duration="580000" />
-      <workItem from="1616061592802" duration="3794000" />
+      <workItem from="1616061592802" duration="3860000" />
+      <workItem from="1616084988870" duration="1034000" />
     </task>
     <servers />
   </component>
