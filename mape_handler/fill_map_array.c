@@ -39,31 +39,31 @@ static char *fill_max_str(char *line, t_info *list)
     return (str);
 }
 
-static void check_map(char **map, t_info *list, int x, int y)
+static  int check_map(char **map, t_info *list, int x, int y)
 {
 	if (map[y][x] == '1' || map[y][x] == 'x')
 		return (0);
 	if (map[y][x] == ' ' || ((y == 0 || x == 0 || x == list->max_size - 1
 							  || y == list->max_height - 1) && map[y][x] != 1))
-		return (1);
+                            handle_error(map, list, "map is not closed");
 	if (map[y][x] == '0' || map[y][x] == '2')
 		map[y][x] = 'x';
 	if (x < list->max_size - 1)
-		check_map(game, map, x + 1, y);
+		check_map(map, list, x + 1, y);
 	if (x > 0)
-		check_map(game, map, x - 1, y);
+		check_map(map, list, x - 1, y);
 	if (y < list->max_height - 1)
-		check_map(game, map, x, y + 1);
+		check_map(map, list, x, y + 1);
 	if (y > 0)
-		check_map(game, map, x, y - 1);
+		check_map(map, list, x, y - 1);
 	if (x < list->max_size - 1 && y < list->max_height - 1)
-		check_map(game, map, x + 1, y + 1);
+		check_map(map, list, x + 1, y + 1);
 	if (x < list->max_size - 1 && y > 0)
-		check_map(game, map, x + 1, y - 1);
+		check_map(map, list, x + 1, y - 1);
 	if (x > 0 && y > 0)
-		check_map(game, map, x - 1, y - 1);
+		check_map(map, list, x - 1, y - 1);
 	if (x > 0 && y < list->max_height - 1)
-		check_map(game, map, x - 1, y + 1);
+		check_map(map, list, x - 1, y + 1);
 	return (0);
 }
 
@@ -79,14 +79,14 @@ static void copy_map(char **map, int i, t_info *list)
 		j++;
 	}
 	map_check[j] = NULL;
-	check_map(map_check, list, list->posY, list->posX);
+    check_map(map_check, list, list->posY, list->posX);
 }
 
 char **fill_map_array(t_list **head, int size, t_info *list)
 {
 	char 	**map;
 	int		  i;
-	t_list	*tmp
+	t_list	*tmp;
 
 	map = malloc((size + 1) * sizeof(char *));
 	ft_bzero(map, sizeof(size + 1));

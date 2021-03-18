@@ -77,13 +77,14 @@ int     main(int arg, char **argv)
             return (0);
 		parse_file(list, line, &head);
     }
-	close(list->fd);
 	ft_lstadd_back(&head, ft_lstnew(line));
     list->mlx->win = mlx_new_window(mlx.mlx, list->res_x, list->res_y, "Cub3D");
 	list->map = fill_map_array(&head, ft_lstsize(head), list);
+	handle_sprt(list);
 	ft_init_player(list);
     draw_screen(list, list->mlx);
     mlx_hook(list->mlx->win, 2, 1L<<0, key_press, list);
     mlx_loop(mlx.mlx);
+    close(list->fd);
 }
 

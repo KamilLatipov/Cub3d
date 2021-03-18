@@ -94,16 +94,16 @@ static unsigned int choose_tex(t_info *list, int texX, int texY)
     if (!list->side)
     {
         if (list->stepX == 1)
-            return (my_mlx_pixel_take(&list->n, texX, texY));
+            return (my_mlx_pixel_take(&list->s, texX, texY));
         else if (list->stepX == -1)
-            return (my_mlx_pixel_take(&list->w, texX, texY));
+            return (my_mlx_pixel_take(&list->n, texX, texY));
     }
     else
     {
         if (list->stepY == -1)
-            return (my_mlx_pixel_take(&list->s, texX, texY));
+            return (my_mlx_pixel_take(&list->e, texX, texY));
         else if (list->stepY == 1)
-         return (my_mlx_pixel_take(&list->e, texX, texY));
+         return (my_mlx_pixel_take(&list->w, texX, texY));
     }
     return (0);
 }
@@ -146,6 +146,12 @@ void draw_screen(t_info *list, t_mlx *mlx)
         double step = 1.0 * (list->n.width / list->lineHeight);
         double texPos = (drawStart - list->res_y / 2 + list->lineHeight / 2) * step;
 
+        int k = 0;
+        while (k++ < drawStart)
+        	my_mlx_pixel_put(&img, x, k, 0x00FFFFFF);
+        k = list->lineHeight;
+        while (k-- > drawEnd)
+        	my_mlx_pixel_put(&img, x, k, 0x0FFFF00);
 		while (drawStart < drawEnd)
 		{
             int texY = (int)texPos & (list->n.width - 1);

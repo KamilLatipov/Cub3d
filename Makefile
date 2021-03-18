@@ -20,7 +20,8 @@ OBJS     = $(SRC:.c=.o)
 
 SRC      = cub3d.c gnl/get_next_line.c gnl/get_next_line_utils.c file_parser/get_color.c \
 			file_parser/get_map.c file_parser/get_resolution.c file_parser/utils.c \
-			mape_handler/fill_map_array.c engine/init_window.c engine/draw_screen.c file_parser/get_texture.c
+			mape_handler/fill_map_array.c engine/init_window.c engine/draw_screen.c file_parser/get_texture.c \
+			error_handle/handle_error.c sprites_func/fill_sprites_array.c
 
 all:    $(NAME)
 

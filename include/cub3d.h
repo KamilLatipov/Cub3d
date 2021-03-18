@@ -21,10 +21,28 @@ typedef struct  s_data {
     int         height;
 }               t_data;
 
+typedef strcut	s_sprt	{
+	double 		x;
+	double 		y;
+	double 		dist;
+}				t_sprt;
+
 typedef struct  s_mlx {
 	void        *mlx;
 	void 		*win;
 }               t_mlx;
+
+typedef struct	s_sprite
+{
+	double		transformy;
+	int			spritescreenx;
+	int			spritew;
+	int			spriteh;
+	int			drawstartx;
+	int			drawendx;
+	int			drawstarty;
+	int			drawendy;
+}				t_sprite;
 
 typedef struct	s_info
 {
@@ -56,6 +74,8 @@ typedef struct	s_info
     int max_size;
     int max_height;
     char *line;
+    t_sprt	*sprt;
+    int sprts_number;
     t_data  n;
     t_data  w;
     t_data  s;
@@ -84,5 +104,8 @@ void    find_wall_hit(t_info *list, int *mapX,int *mapY);
 int		get_wall_texture(t_info *list, char side, char *line, int *i);
 int		check_name(char *arg, char *ext);
 unsigned int my_mlx_pixel_take(t_data *data, int x, int y);
+void    handle_error(char **map, t_info *list, char *str);
+void 	handle_sprt(t_info *list);
+void	draw_sprites(t_info *list);
 
 #endif
